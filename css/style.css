@@ -1,25 +1,96 @@
+
+/* breakpoints mediaquerys */
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {...} */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */
+
+/* >>>>>>>>>>>>>>>>>  Colors <<<<<<<<<<<<<<<<<< */
+:root{
+	--header-height: 3rem;
+	
+	--hue-color: 212.075;
+	--first-color: hsl(240, 100%, 12%);
+	--second-color: hsl(218.333, 100%, 21%);
+	--third-color: hsl(212.075, 99%, 32%);
+	--fourth-color: hsl(222.414, 55%, 58%);
+	--fifth-color: hsl(223.429, 100%, 79%);
+	--first-complement-color: hsl(32.185, 100%, 30%);
+	--second-complement-color: hsl(30.759, 72%, 43%);
+	--text-color: #fff;
+
+	/* >>>>>>>>>>>>>>>>>  Font <<<<<<<<<<<<<<<<<< */
+  
+	/* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+	/* >>>>>>>>>>>>>>>>>  Font weight <<<<<<<<<<<<<<<<<< */
+	--font-medium: 500;
+  --font-semi-bold: 600;
+
+	/* >>>>>>>>>>>>>>>>>  Index <<<<<<<<<<<<<<<<<< */
+  --z-tooltip: 1;  /*10*/
+  --z-fixed: 2;    /*100*/
+  --z-modal: 3;    /*1000*/
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>  Base <<<<<<<<<<<<<<<<<< */
 *{
   margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-
-li{
+ul{
 	list-style: none;
 }
-
 html{
-  /* me permite deslizar cuando hago clic en los links del menu */
   scroll-behavior: smooth;
 }
 a{
 	text-decoration: none;
 }
+body{
+	font-size: var(--normal-font-size);
+	color: var(--text-color);
+}
+h1,h2,h3{
+	font-weight: var(--font-semi-bold);
+}
+
 
 /* >>>>>>>>>>>>>>>>>  Generales <<<<<<<<<<<<<<<<<< */
 .container{
-	width: 95%;
-	margin: auto;
+	max-width: 768px;
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 
 
@@ -27,5 +98,28 @@ a{
 
 header{
 	width: 100%;
+	background-color:var(--first-color);
+	position:fixed;
+	left: 0;
+	bottom: 0;
 }
+nav{
+	max-width: 968px;
+	height: var(--header-height);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+nav .nav-link{
+	color: var(--text-color);
+	font-weight: var(--font-semi-bold);
+}
+nav .menu{
+	display: none;
+}
+nav .logo{
+	height: 4px;
+	width: 4px;
+}
+
 
