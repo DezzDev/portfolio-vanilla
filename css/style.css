@@ -20,7 +20,8 @@
 	--header-height: 3rem;
 	
 	--hue-color: 212.075;
-	--first-color: hsl(240, 100%, 12%);
+	--body-color: hsl(240, 100%, 5%);
+	--first-color: hsl(240, 100%, 11%);
 	--second-color: hsl(218.333, 100%, 21%);
 	--third-color: hsl(212.075, 99%, 32%);
 	--fourth-color: hsl(222.414, 55%, 58%);
@@ -80,6 +81,7 @@ a{
 body{
 	font-size: var(--normal-font-size);
 	color: var(--text-color);
+	background-color:var(--body-color);
 }
 h1,h2,h3{
 	font-weight: var(--font-semi-bold);
@@ -98,7 +100,7 @@ h1,h2,h3{
 
 header{
 	width: 100%;
-	background-color:var(--first-color);
+	background-color:var(--body-color);
 	position:fixed;
 	left: 0;
 	bottom: 0;
@@ -110,16 +112,43 @@ nav{
 	justify-content: space-between;
 	align-items: center;
 }
-nav .nav-link{
-	color: var(--text-color);
-	font-weight: var(--font-semi-bold);
-}
-nav .menu{
-	display: none;
-}
 nav .logo{
 	height: 4px;
 	width: 4px;
 }
+
+nav .menu{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 2rem 1.5rem 4rem;
+
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+
+	background-color: var(--first-color);
+	border-radius: 20px 20px 0 0 ;
+	display: none;
+
+}
+
+nav .menu .nav-item .nav-link{
+	color: var(--text-color);
+	
+}
+nav .menu .nav-close{
+	position: absolute;
+	font-size: 1.6rem;
+	bottom: 1rem;
+	right: 1.5rem;
+}
+nav .toogle-menu .toogle-menu-icon:hover{
+	color: var(--fourth-color);
+}
+
+
 
 
