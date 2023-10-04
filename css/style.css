@@ -1,4 +1,3 @@
-
 /* breakpoints mediaquerys */
 /* Extra small devices (phones, 600px and down) */
 /* @media only screen and (max-width: 600px) {...} */
@@ -16,10 +15,10 @@
 /* @media only screen and (min-width: 1200px) {...} */
 
 /* >>>>>>>>>>>>>>>>>  Colors <<<<<<<<<<<<<<<<<< */
-:root{
+:root {
 	--header-height: 3rem;
-	
-	--hue-color: 212.075;
+
+	--hue-color: 240;
 	--body-color: hsl(240, 100%, 5%);
 	--first-color: hsl(240, 100%, 11%);
 	--second-color: hsl(218.333, 100%, 21%);
@@ -28,97 +27,142 @@
 	--fifth-color: hsl(223.429, 100%, 79%);
 	--first-complement-color: hsl(32.185, 100%, 30%);
 	--second-complement-color: hsl(30.759, 72%, 43%);
-	--text-color: #fff;
+	--title-color: #fff;
+	--text-color: hsl(240, 8%, 45%);
 
 	/* >>>>>>>>>>>>>>>>>  Font <<<<<<<<<<<<<<<<<< */
-  
+
 	/* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
-  --big-font-size: 2rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1.125rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+	--big-font-size: 2rem;
+	--h1-font-size: 1.5rem;
+	--h2-font-size: 1.25rem;
+	--h3-font-size: 1.125rem;
+	--normal-font-size: .938rem;
+	--small-font-size: .813rem;
+	--smaller-font-size: .75rem;
 
 	/* >>>>>>>>>>>>>>>>>  Font weight <<<<<<<<<<<<<<<<<< */
 	--font-medium: 500;
-  --font-semi-bold: 600;
+	--font-semi-bold: 600;
 
 	/* >>>>>>>>>>>>>>>>>  Index <<<<<<<<<<<<<<<<<< */
-  --z-tooltip: 1;  /*10*/
-  --z-fixed: 2;    /*100*/
-  --z-modal: 3;    /*1000*/
+	--z-tooltip: 1;
+	/*10*/
+	--z-fixed: 2;
+	/*100*/
+	--z-modal: 3;
+	/*1000*/
 }
 
 @media screen and (min-width: 968px) {
-  :root {
-    --big-font-size: 3rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
-  }
+	:root {
+		--big-font-size: 3rem;
+		--h1-font-size: 2.25rem;
+		--h2-font-size: 1.5rem;
+		--h3-font-size: 1.25rem;
+		--normal-font-size: 1rem;
+		--small-font-size: .875rem;
+		--smaller-font-size: .813rem;
+	}
 }
 
 /* >>>>>>>>>>>>>>>>>  Base <<<<<<<<<<<<<<<<<< */
-*{
-  margin: 0;
+* {
+	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-ul{
+
+ul {
 	list-style: none;
 }
-html{
-  scroll-behavior: smooth;
+
+html {
+	scroll-behavior: smooth;
 }
-a{
+
+a {
 	text-decoration: none;
 }
-body{
+
+body {
 	font-size: var(--normal-font-size);
 	color: var(--text-color);
-	background-color:var(--body-color);
+	background-color: var(--body-color);
 }
-h1,h2,h3{
+
+h1,
+h2,
+h3 {
 	font-weight: var(--font-semi-bold);
+	color: var(--title-color);
+}
+img{
+  max-width: 100%;
+  height: auto;
 }
 
 
 /* >>>>>>>>>>>>>>>>>  Generales <<<<<<<<<<<<<<<<<< */
-.container{
+.container {
 	max-width: 768px;
-	margin-left: 1rem;
-	margin-right: 1rem;
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+}
+.section{
+  padding: 2rem 0 4rem;
+}
+
+.section-title{
+  font-size: var(--h1-font-size);
+	
+}
+
+.section-subtitle{
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-3);
+	
+}
+
+.section-title,
+.section-subtitle{
+  text-align: center;
 }
 
 
 /* >>>>>>>>>>>>>>>>>  Menu <<<<<<<<<<<<<<<<<< */
 
-header{
+header {
 	width: 100%;
-	background-color:var(--body-color);
-	position:fixed;
+	background-color: var(--body-color);
+	position: fixed;
 	left: 0;
 	bottom: 0;
 }
-nav{
+
+nav {
 	max-width: 968px;
 	height: var(--header-height);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
-nav .logo{
-	height: 4px;
-	width: 4px;
+
+nav .toogle-menu,
+nav .logo {
+	font-size: 1.2rem;
+	cursor: pointer;
+	color: var(--title-color);
 }
 
-nav .menu{
-	position: absolute;
+nav .toogle-menu:hover,
+nav .logo:hover {
+	color: var(--fourth-color);
+}
+
+nav .menu {
+	position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 100%;
@@ -128,27 +172,92 @@ nav .menu{
 	flex-direction: column;
 	gap: 2rem;
 	align-items: center;
+	justify-content: center;
 
 	background-color: var(--first-color);
-	border-radius: 20px 20px 0 0 ;
-	display: none;
-
-}
-
-nav .menu .nav-item .nav-link{
-	color: var(--text-color);
+	border-radius: 20px 20px 0 0;
+	transition: .5s;
 	
 }
-nav .menu .nav-close{
+
+nav .hide-menu {
+	bottom: -100%;
+}
+
+nav .menu .nav-item .nav-link {
+	color: var(--title-color);
+}
+
+nav .menu .nav-close {
 	position: absolute;
 	font-size: 1.6rem;
 	bottom: 1rem;
 	right: 1.5rem;
+	cursor: pointer;
+	color: var(--title-color);
 }
-nav .toogle-menu .toogle-menu-icon:hover{
+
+nav .menu .nav-item .nav-link:hover,
+nav .menu .nav-close:hover {
 	color: var(--fourth-color);
 }
 
+/* >>>>>>>>>>>>>>>>>  Home <<<<<<<<<<<<<<<<<< */
+.hero{
+	height: calc(100vh - var(--header-height));
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.home{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 2rem;
+}
 
+.perfil-img-container{
+	background: linear-gradient(90deg,var(--third-color) 0%, var(--fourth-color) 100%);
+	border-radius: 63% 37% 54% 46% / 43% 40% 60% 57%;
+	overflow: hidden;
+	width:200px;
+}
+.foto-perfil{
+	position: relative;
+	bottom: -10px;
+}
+.home-subtitle{
+	color: var(--text-color);
+}
 
+.home .home-content{
+	margin-bottom: 3rem;
+}
+.typing-effect{
+	font-weight: var(--font-semi-bold);
+}
+.typing-effect span{
+	color: var(--fifth-color);
+	position: relative;
+}
+.typing-effect span::before{
+	content: "";
+	right: -8px;
+	top: 50%;
+	position: absolute;
+	height: 30px;
+	width: 2px;
+	background-color: var(--fifth-color);
+	transform: translateY(-45%);
+	animation: blink 0.7s infinite;
+}
 
+.typing-effect span.stop-blinking::before{
+	animation: none;
+}
+
+@keyframes blink{
+	50%{
+		opacity: 0;
+	}
+}

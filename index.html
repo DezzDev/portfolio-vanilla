@@ -10,51 +10,82 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="./css/style.css">
 
+	<!-- scripts -->
+	<script src="./js/main.js" defer></script>
 
 	<title>Portfolio Daniel</title>
 </head>
 
 <body>
-	
+
 
 	<header>
-		<nav class="container" >
+		<nav class="container">
 			<div class="logo">
 				Daniel
 			</div>
-			<ul class="menu">
+			<ul class="menu hide-menu" id="menu">
 				<li class="nav-item">
-					<i class="uil uil-estate nav-icon"></i>
-					<a class="nav-link" href="#">Home</a>
+					<a class="nav-link" href="#">
+						<i class="uil uil-estate nav-icon"></i>
+						Home
+					</a>
 				</li>
 				<li class="nav-item">
-					<i class="uil uil-bag-alt nav-icon"></i>
-					<a class="nav-link" href="#">Projects</a>
+					<a class="nav-link" href="#">
+						<i class="uil uil-bag-alt nav-icon"></i>
+						Projects
+					</a>
 				</li>
 				<li class="nav-item">
-					<i class="uil uil-book-alt nav-icon"></i>
-					<a class="nav-link" href="#">Journey</a>
+
+					<a class="nav-link" href="#">
+						<i class="uil uil-book-alt nav-icon"></i>
+						Journey
+					</a>
 				</li>
 				<li class="nav-item">
-					<i class="uil uil-envelope-edit nav-icon"></i>
-					<a class="nav-link" href="#">Contact</a>
+					<a class="nav-link" href="#">
+						<i class="uil uil-envelope-edit nav-icon"></i>
+						Contact
+					</a>
 				</li>
 
-				<i class="uil uil-times nav-close"></i>
+
+				<i class="uil uil-times nav-close" id="nav-close"></i>
 			</ul>
-		<div class="toogle-menu">
-			<i class="uil uil-apps toogle-menu-icon"></i>
-		</div>
+			<div class="toogle-menu" id="toogle-menu">
+				<i class="uil uil-apps"></i>
+			</div>
 		</nav>
 
 	</header>
 
 	<main>
+		<section class="section hero">
+			<div class="home container">
+				<div class="perfil-img-container">
+					<img class="foto-perfil" src="./img/perfil-foto.png" alt="foto-perfil">
+				</div>
 
+				<div class="home-content">
+					<h1 class="section-title">
+						Hola, me llamo Daniel
+					</h1>
+					<h3 class="section-subtitle home-subtitle">
+						Soy un desarrollador web
+					</h3>
+				</div>
+
+				<p class="typing-effect section-title">
+					Coding is <span></span>
+				</p>
+
+			</div>
+		</section>
 	</main>
 
-	<!-- scripts -->
-	<script src="./js/main.js"></script>
+	
 </body>
 
 </html>
