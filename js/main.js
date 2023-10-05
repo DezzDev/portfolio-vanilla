@@ -4,6 +4,12 @@ function start() {
   document.querySelector('#toogle-menu').addEventListener('click', toogleMenu)
   document.querySelector('#nav-close').addEventListener('click', toogleMenu)
 
+  // Particles.js
+  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+  particlesJS.load('particles-js', './assets/particlesjs-config.json', function () {
+    console.log('callback - particles.js config loaded');
+  });
+
   typeEffect()
 }
 
@@ -18,7 +24,7 @@ function toogleMenu() {
 // >>>>>>>>>>>>>> typing effect <<<<<<<<<<<<<<<<<
 
 const dynamicText = document.querySelector('.typing-effect span')
-const words = ['love', 'like Art', 'the Future', 'Everything']
+const words = ['Pasión', 'Arte', 'Futuro', 'Todo']
 let wordIndex = 0
 let charIndex = 0
 let isDeleting = false
@@ -42,8 +48,8 @@ function typeEffect() {
     // if word is deleted then switch to the next word
     isDeleting = !isDeleting
     dynamicText.classList.remove('stop-blinking')
-    wordIndex = !isDeleting ? (wordIndex +1) % words.length : wordIndex
+    wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex
     setTimeout(typeEffect, 1200)
-    
+
   }
 }

@@ -12,6 +12,7 @@
 
 	<!-- scripts -->
 	<script src="./js/main.js" defer></script>
+	<script src="./js/particles.min.js" defer></script>
 
 	<title>Portfolio Daniel</title>
 </head>
@@ -24,36 +25,39 @@
 			<div class="logo">
 				Daniel
 			</div>
-			<ul class="menu hide-menu" id="menu">
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<i class="uil uil-estate nav-icon"></i>
-						Home
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<i class="uil uil-bag-alt nav-icon"></i>
-						Projects
-					</a>
-				</li>
-				<li class="nav-item">
 
-					<a class="nav-link" href="#">
-						<i class="uil uil-book-alt nav-icon"></i>
-						Journey
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<i class="uil uil-envelope-edit nav-icon"></i>
-						Contact
-					</a>
-				</li>
+			<div class="menu hide-menu" id="menu">
+				<ul class="menu-content">
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="uil uil-estate nav-icon"></i>
+							Home
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="uil uil-bag-alt nav-icon"></i>
+							Proyectos
+						</a>
+					</li>
+					<li class="nav-item">
 
-
+						<a class="nav-link" href="#">
+							<i class="uil uil-book-alt nav-icon"></i>
+							Trayectoria
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="uil uil-envelope-edit nav-icon"></i>
+							Contacto
+						</a>
+					</li>
+				</ul>
 				<i class="uil uil-times nav-close" id="nav-close"></i>
-			</ul>
+
+			</div>
+
 			<div class="toogle-menu" id="toogle-menu">
 				<i class="uil uil-apps"></i>
 			</div>
@@ -62,8 +66,11 @@
 	</header>
 
 	<main>
+
+		<div class="particles" id="particles-js"></div>
 		<section class="section hero">
 			<div class="home container">
+
 				<div class="perfil-img-container">
 					<img class="foto-perfil" src="./img/perfil-foto.png" alt="foto-perfil">
 				</div>
@@ -78,14 +85,29 @@
 				</div>
 
 				<p class="typing-effect section-title">
-					Coding is <span></span>
+					Programar es <span></span>
 				</p>
 
 			</div>
 		</section>
+
+		<section class="section">
+			<div class="container proyectos">
+				<h2 class="section-title">Proyectos</h2>
+				<span class="section-subtitle">
+					Una muestra de lo que puedo llegar a hacer
+				</span>
+				<div class="card-proyecto">
+					
+				</div>
+			</div>
+		</section>
+
+
+
 	</main>
 
-	
+
 </body>
 
 </html>
