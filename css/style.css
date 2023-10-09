@@ -47,6 +47,7 @@
 	/* >>>>>>>>>>>>>>>>>  Font weight <<<<<<<<<<<<<<<<<< */
 	--font-medium: 500;
 	--font-semi-bold: 600;
+	--font-bold: 700;
 
 	/* >>>>>>>>>>>>>>>>>  Index <<<<<<<<<<<<<<<<<< */
 	--z-tooltip: 1;
@@ -55,6 +56,14 @@
 	/*100*/
 	--z-modal: 3;
 	/*1000*/
+
+	/* >>>>>>>>>>>>>>>>>  Z levels for cards <<<<<<<<<<<<<<<<<< */
+	--level-one: translateZ(3rem);
+	--level-two: translateZ(6rem);
+	--level-three: translateZ(9rem);
+
+
+
 }
 @media screen and (min-width: 500px) {
 	:root {
@@ -216,7 +225,7 @@ nav .menu .nav-close:hover {
 .particles{
 	height: calc(100vh - var(--header-height));
 	position: absolute;
-	width: 100vw;
+	width: 100%;
 	z-index: -1;
 }
 
@@ -320,7 +329,7 @@ nav .menu .nav-close:hover {
 	text-align: center;
 	position: relative;
 	padding: 5rem;
-	transition: transform 3s;
+	transition: transform 2s;
 	background-color: pink;
 	transform-style: preserve-3d;
 }
@@ -332,21 +341,12 @@ nav .menu .nav-close:hover {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 2rem;
+	padding: 15rem 2rem;
 	backface-visibility: hidden;
-}
+	transform-style: preserve-3d;
+	display: grid;
+	align-content: center;
 
-.card-title{
-	font-size: 3rem;
-	transform: perspective(500px) translateZ(5rem);
-}
-
-.card-subtitle{
-	transform: translateZ(2rem);
-}
-
-.card-body{
-	transform: translateZ(2rem);
 }
 
 .card-back{
@@ -355,8 +355,46 @@ nav .menu .nav-close:hover {
 }
 
 .card-front{
-	background-color: black;
+	background-color: rgb(49, 40, 40);
+	background-image: url(../img/trastero.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-blend-mode: overlay;
+	color: #fff;
 }
+.card-front::before{
+	content: '';
+	position: absolute;
+	--spacer: 1em;
+	top: var(--spacer);
+	bottom: var(--spacer);
+	left: var(--spacer);
+	right: var(--spacer);
+	border: 3px solid currentColor;
+	transform: var(--level-one);
+}
+.card-body{
+	transform: var(--level-two);
+}
+.card-title{
+	font-size: 3.5rem;
+	transform: var(--level-three);
+	order: 2;
+	text-transform: uppercase;
+	/* box-shadow: 0 0 5px black; */
+}
+
+.card-subtitle{
+	transform: var(--level-two);
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font-size: .8rem;
+	font-weight: var(--font-bold);
+	/* opacity: .7; */
+}
+
+
 
 
 
