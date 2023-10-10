@@ -44,10 +44,11 @@
 	--small-font-size: .813rem;
 	--smaller-font-size: .75rem;
 
-	/* >>>>>>>>>>>>>>>>>  Font weight <<<<<<<<<<<<<<<<<< */
+	/* >>>>>>>>>>>>>>>>>  utilities <<<<<<<<<<<<<<<<<< */
 	--font-medium: 500;
 	--font-semi-bold: 600;
 	--font-bold: 700;
+	--mb-3: 3rem;
 
 	/* >>>>>>>>>>>>>>>>>  Index <<<<<<<<<<<<<<<<<< */
 	--z-tooltip: 1;
@@ -61,6 +62,12 @@
 	--level-one: translateZ(3rem);
 	--level-two: translateZ(6rem);
 	--level-three: translateZ(9rem);
+
+	/* >>>>>>>>>>>>>>>>>  cards <<<<<<<<<<<<<<<<<< */
+	--card-width: 200px;
+	--card-title: 2rem;
+	--card-subtitle: .8rem;
+
 
 
 
@@ -157,6 +164,7 @@ header {
 	position: fixed;
 	left: 0;
 	bottom: 0;
+	z-index: var(--z-fixed);
 }
 
 nav {
@@ -314,9 +322,18 @@ nav .menu .nav-close:hover {
 
 /* >>>>>>>>>>>>>>>>>  Proyectos <<<<<<<<<<<<<<<<<< */
 
+.proyectos-section{
+	background-color: var(--first-color);
+}
+.proyectos-section .cards-container{
+	display: grid;
+	grid-template-columns: auto;
+	justify-content: center;
+	gap: 2rem;
+}
+
 .card-proyecto{
-	width: 400px;
-	
+	width: var(--card-width)
 	/* height: 200px; */
 }
 .card-proyecto:hover .card-content{
@@ -328,10 +345,11 @@ nav .menu .nav-close:hover {
 .card-content{
 	text-align: center;
 	position: relative;
-	padding: 5rem;
+	height: var(--card-width);
 	transition: transform 2s;
 	background-color: pink;
 	transform-style: preserve-3d;
+	
 }
 
 .card-front,
@@ -341,17 +359,17 @@ nav .menu .nav-close:hover {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 15rem 2rem;
 	backface-visibility: hidden;
 	transform-style: preserve-3d;
 	display: grid;
 	align-content: center;
-
 }
 
 .card-back{
 	transform: rotateY(.5turn);
-	background-color: yellow;
+	background-color: var(--first-complement-color);
+	color: #fff;
+	padding: .5rem;
 }
 
 .card-front{
@@ -378,7 +396,7 @@ nav .menu .nav-close:hover {
 	transform: var(--level-two);
 }
 .card-title{
-	font-size: 3.5rem;
+	font-size: var(--card-title);
 	transform: var(--level-three);
 	order: 2;
 	text-transform: uppercase;
@@ -389,10 +407,15 @@ nav .menu .nav-close:hover {
 	transform: var(--level-two);
 	text-transform: uppercase;
 	letter-spacing: 4px;
-	font-size: .8rem;
+	font-size: var(--card-subtitle);
 	font-weight: var(--font-bold);
 	/* opacity: .7; */
 }
+
+
+
+
+
 
 
 
