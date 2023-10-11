@@ -65,13 +65,14 @@
 
 	/* >>>>>>>>>>>>>>>>>  cards <<<<<<<<<<<<<<<<<< */
 	--card-width: 200px;
-	--card-title: 2rem;
-	--card-subtitle: .8rem;
+	--card-title: 1.5rem;
+	--card-subtitle: .7rem;
 
 
 
 
 }
+
 @media screen and (min-width: 500px) {
 	:root {
 		--typing-effect-font-size: 1.4rem;
@@ -123,38 +124,43 @@ h3 {
 	font-weight: var(--font-semi-bold);
 	color: var(--title-color);
 }
-img{
-  max-width: 100%;
-  height: auto;
+
+img {
+	max-width: 100%;
+	height: auto;
 }
 
 
 /* >>>>>>>>>>>>>>>>>  Generales <<<<<<<<<<<<<<<<<< */
 .container {
-	max-width: 768px;
+	
 	margin-left: 1.5rem;
 	margin-right: 1.5rem;
 }
-.section{
-  padding: 2rem 0 4rem;
+
+.section {
+	padding: 2rem 0 4rem;
 }
 
-.section-title{
-  font-size: var(--h1-font-size);
+.section-title {
+	font-size: var(--h1-font-size);
 }
 
-.section-subtitle{
-  display: block;
-  font-size: var(--small-font-size);
-  margin-bottom: var(--mb-3);
-	
+.section-subtitle {
+	display: block;
+	font-size: var(--small-font-size);
+	margin-bottom: var(--mb-3);
+
 }
 
 .section-title,
-.section-subtitle{
-  text-align: center;
+.section-subtitle {
+	text-align: center;
 }
 
+.text-right{
+	text-align: right;
+}
 
 /* >>>>>>>>>>>>>>>>>  Menu <<<<<<<<<<<<<<<<<< */
 
@@ -202,9 +208,10 @@ nav .menu {
 nav .hide-menu {
 	bottom: -100%;
 }
-nav .menu .menu-content{
+
+nav .menu .menu-content {
 	display: grid;
-	grid-template-columns: repeat(2 , 1fr);
+	grid-template-columns: repeat(2, 1fr);
 	gap: 1rem;
 }
 
@@ -230,7 +237,7 @@ nav .menu .nav-close:hover {
 }
 
 /* >>>>>>>>>>>>>>>>>  Particles <<<<<<<<<<<<<<<<<< */
-.particles{
+.particles {
 	height: calc(100vh - var(--header-height));
 	position: absolute;
 	width: 100%;
@@ -239,65 +246,74 @@ nav .menu .nav-close:hover {
 
 /* >>>>>>>>>>>>>>>>>  Home <<<<<<<<<<<<<<<<<< */
 
-.hero{
+.hero {
 	height: calc(100vh - var(--header-height));
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	
 }
-.home{
+
+.home {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	gap: 2rem;
 }
-.home .perfil{
+
+.home .perfil {
 	display: flex;
 	gap: 1rem;
 	align-items: center;
 }
-.home .perfil .redes{
+
+.home .perfil .redes {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
 }
-.home .perfil .redes i{
+
+.home .perfil .redes i {
 	font-size: 1.5rem;
 	color: var(--fifth-color);
 	cursor: pointer;
 }
 
-.home .perfil .perfil-img{
-	background: linear-gradient(90deg,var(--third-color) 0%, var(--fourth-color) 100%);
+.home .perfil .perfil-img {
+	background: linear-gradient(90deg, var(--third-color) 0%, var(--fourth-color) 100%);
 	border-radius: 63% 37% 54% 46% / 43% 40% 60% 57%;
 	overflow: hidden;
-	width:200px;
+	width: 200px;
 }
-.foto-perfil{
+
+.foto-perfil {
 	position: relative;
 	bottom: -10px;
 }
-.home-subtitle{
+
+.home-subtitle {
 	color: var(--text-color);
 	font-size: var(--h3-font-size);
 }
 
-.home .home-content{
+.home .home-content {
 	margin-bottom: 3rem;
 }
-.home .home-content span{
+
+.home .home-content span {
 	color: var(--first-complement-color);
 }
-.typing-effect{
+
+.typing-effect {
 	font-weight: var(--font-semi-bold);
 	font-size: var(--typing-effect-font-size);
 }
-.typing-effect span{
+
+.typing-effect span {
 	color: var(--fifth-color);
 	position: relative;
 }
-.typing-effect span::before{
+
+.typing-effect span::before {
 	content: "";
 	right: -8px;
 	top: 50%;
@@ -309,12 +325,12 @@ nav .menu .nav-close:hover {
 	animation: blink 0.7s infinite;
 }
 
-.typing-effect span.stop-blinking::before{
+.typing-effect span.stop-blinking::before {
 	animation: none;
 }
 
-@keyframes blink{
-	50%{
+@keyframes blink {
+	50% {
 		opacity: 0;
 	}
 }
@@ -322,38 +338,41 @@ nav .menu .nav-close:hover {
 
 /* >>>>>>>>>>>>>>>>>  Proyectos <<<<<<<<<<<<<<<<<< */
 
-.proyectos-section{
+.proyectos-section {
 	background-color: var(--first-color);
 }
-.proyectos-section .cards-container{
+
+.proyectos-section .cards-container {
 	display: grid;
 	grid-template-columns: auto;
 	justify-content: center;
 	gap: 2rem;
 }
 
-.card-proyecto{
+.card-proyecto {
 	width: var(--card-width)
-	/* height: 200px; */
+		/* height: 200px; */
 }
-.card-proyecto:hover .card-content{
+
+.card-proyecto:hover .card-content {
 	/*90deg ==> .25turn
 		180deg ==> .5turn
 	 */
 	transform: rotateY(.5turn);
 }
-.card-content{
+
+.card-content {
 	text-align: center;
 	position: relative;
 	height: var(--card-width);
-	transition: transform 2s;
+	transition: transform 1.5s;
 	background-color: pink;
 	transform-style: preserve-3d;
-	
+
 }
 
 .card-front,
-.card-back{
+.card-back {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -365,14 +384,14 @@ nav .menu .nav-close:hover {
 	align-content: center;
 }
 
-.card-back{
+.card-back {
 	transform: rotateY(.5turn);
 	background-color: var(--first-complement-color);
 	color: #fff;
 	padding: .5rem;
 }
 
-.card-front{
+.card-front {
 	background-color: rgb(49, 40, 40);
 	background-image: url(../img/trastero.jpg);
 	background-size: cover;
@@ -381,30 +400,33 @@ nav .menu .nav-close:hover {
 	background-blend-mode: overlay;
 	color: #fff;
 }
-.card-front::before{
+
+.card-front::before {
 	content: '';
 	position: absolute;
-	--spacer: 1em;
+	--spacer: 1rem;
 	top: var(--spacer);
 	bottom: var(--spacer);
 	left: var(--spacer);
 	right: var(--spacer);
 	border: 3px solid currentColor;
+	/* transform: var(--level-one); */
+}
+
+.card-body {
 	transform: var(--level-one);
 }
-.card-body{
-	transform: var(--level-two);
-}
-.card-title{
+
+.card-title {
 	font-size: var(--card-title);
-	transform: var(--level-three);
+	/* transform: var(--level-three); */
 	order: 2;
 	text-transform: uppercase;
 	/* box-shadow: 0 0 5px black; */
 }
 
-.card-subtitle{
-	transform: var(--level-two);
+.card-subtitle {
+	/* transform: var(--level-two); */
 	text-transform: uppercase;
 	letter-spacing: 4px;
 	font-size: var(--card-subtitle);
@@ -414,11 +436,106 @@ nav .menu .nav-close:hover {
 
 
 
+/* >>>>>>>>>>>>>>>>>  Trayectoria <<<<<<<<<<<<<<<<<< */
+
+.trayectoria-tabs {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	margin-bottom: var(--mb-3);
+}
+
+.trayectoria-tab {
+	cursor: pointer;
+}
+
+.trayectoria-tab.active {
+	color: var(--fifth-color);
+}
+
+.trayectoria-section-content {
+	display: none;
+}
+
+.trayectoria-section-content.active {
+	display: block;
+}
+.trayectoria-section{
+	display: grid;
+	grid-template-columns: 1fr max-content 1fr;
+	gap: .5rem;
+	
+}
+
+.trayectoria-spot {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	background-color:var(--fifth-color);
+	border-radius: 50%;
+}
+
+.trayectoria-line {
+	display: block;
+	width: 1px;
+	height: 100%;
+	background-color: var(--fifth-color);
+	transform: translate(6px, -7px);
+}
+
+.trayectoria-title{
+	font-size: var(--small-font-size);
+	font-weight: var(--font-medium);
+}
+
+.trayectoria-subtitle{
+	font-size: var(--small-font-size);
+	display: inline-block;
+	margin-bottom: 1rem;
+}
+
+.trayectoria-section-calendar{
+	font-size: var(--smaller-font-size);
+}
 
 
 
+/* >>>>>>>>>>>>>>>>>  Media querys <<<<<<<<<<<<<<<<<< */
+
+@media screen and (min-width : 350px) {
 
 
 
+	/* Trayectoria */
+	.trayectoria-title{
+		font-size: var(--normal-font-size);
+	}
+}
+
+@media screen and (min-width: 568px){
+
+	/* Proyectos */
+	:root{
+		--card-title : 1.8rem;
+		--card-subtitle : .8rem
+	}
+	.proyectos-section .cards-container{
+		grid-template-columns: auto auto;
+	}
+	
+}
 
 
+@media screen and (min-width: 768px){
+	.container{
+		margin-left: 2.5rem;
+		margin-right: 2.5rem;
+	}
+}
+
+@media screen and (min-width: 968px){
+	.container{
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
