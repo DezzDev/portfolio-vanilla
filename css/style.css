@@ -133,7 +133,7 @@ img {
 
 /* >>>>>>>>>>>>>>>>>  Generales <<<<<<<<<<<<<<<<<< */
 .container {
-	
+	max-width: 768px;
 	margin-left: 1.5rem;
 	margin-right: 1.5rem;
 }
@@ -173,13 +173,15 @@ header {
 	z-index: var(--z-fixed);
 }
 
-nav {
+nav.nav {
 	max-width: 968px;
 	height: var(--header-height);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
+
+
 
 nav .toogle-menu,
 nav .logo {
@@ -499,6 +501,86 @@ nav .menu .nav-close:hover {
 }
 
 
+/* >>>>>>>>>>>>>>>>>  Trayectoria <<<<<<<<<<<<<<<<<< */
+
+.contacto{
+	background-color: var(--first-color);
+}
+
+.contacto-content{
+	display: grid;
+	gap: 3rem;
+	justify-content: center;
+}
+
+.contacto-informacion{
+	display: grid;
+	grid-template-columns: 	auto 1fr;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+.contacto-icon{
+	font-size: 2rem;
+	color: var(--first-complement-color);
+}
+
+.form-contacto{
+	display: grid;
+	gap: 1rem;
+	justify-content: center;
+}
+
+.form-element{
+	display: flex;
+	flex-direction: column;
+	background-color: var(--body-color);
+	padding: 1rem;
+	border-radius: 10px;
+}
+
+.label-form{
+	margin-bottom: .2rem;
+	color: var(--title-color);
+	font-size: var(--small-font-size);
+}
+
+.input-form{
+	background-color: var(--body-color);
+	border: none;
+	outline: none;
+	color: var(--text-color);
+	font-size: var(--normal-font-size);
+}
+
+.text-area-form{
+	resize: vertical;
+}
+
+.btn-form{
+	display: flex;
+	
+	align-items: center;
+	padding: .5rem 1rem;
+	font-size: 1rem;
+	border-radius: 10px;
+	cursor: pointer;
+	background-color: var(--first-complement-color);
+	border: none;
+	color: white;
+}
+
+.btn-form:hover{
+	background-color: var(--second-complement-color);
+}
+
+.btn-form .button-icon{
+	font-size: 1.3rem;
+	margin-left: 5px;
+}
+
+
+
 
 /* >>>>>>>>>>>>>>>>>  Media querys <<<<<<<<<<<<<<<<<< */
 
@@ -527,15 +609,24 @@ nav .menu .nav-close:hover {
 
 
 @media screen and (min-width: 768px){
-	.container{
-		margin-left: 2.5rem;
-		margin-right: 2.5rem;
-	}
-}
 
-@media screen and (min-width: 968px){
+	header{
+		padding: 0 1rem;
+	}
+
 	.container{
 		margin-left: auto;
 		margin-right: auto;
 	}
+
+	.contacto-content{
+		grid-template-columns: 1fr 1fr;
+		padding: 0 1rem;
+	}
+
+	
+}
+
+@media screen and (min-width: 968px){
+	
 }
