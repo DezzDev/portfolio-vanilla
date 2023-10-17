@@ -2,7 +2,7 @@ window.addEventListener('load', start)
 
 function start() {
   // menu
-  document.querySelector('#toogle-menu').addEventListener('click', toogleMenu)
+  document.querySelector('#toggle-menu').addEventListener('click', toogleMenu)
   document.querySelector('#nav-close').addEventListener('click', toogleMenu)
 
   // Particles.js
