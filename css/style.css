@@ -281,7 +281,7 @@ nav .menu .nav-close:hover {
 	background: linear-gradient(90deg, var(--third-color) 0%, var(--fourth-color) 100%);
 	border-radius: 63% 37% 54% 46% / 43% 40% 60% 57%;
 	overflow: hidden;
-	width: 200px;
+	max-width: 200px;
 }
 
 .foto-perfil {
@@ -506,11 +506,12 @@ nav .menu .nav-close:hover {
 	display: grid;
 	gap: 3rem;
 	justify-content: center;
+	grid-template-columns: 1fr;
 }
 
 .contacto-informacion {
 	display: grid;
-	grid-template-columns: auto 1fr;
+	grid-template-columns: max-content auto;
 	gap: 1rem;
 	margin-bottom: 2rem;
 }
@@ -522,6 +523,7 @@ nav .menu .nav-close:hover {
 
 .form-contacto {
 	display: grid;
+	
 	gap: 1rem;
 	justify-content: center;
 }
@@ -532,6 +534,7 @@ nav .menu .nav-close:hover {
 	background-color: var(--body-color);
 	padding: 1rem;
 	border-radius: 10px;
+	max-width: 400px;
 }
 
 .label-form {
@@ -546,6 +549,7 @@ nav .menu .nav-close:hover {
 	outline: none;
 	color: var(--text-color);
 	font-size: var(--normal-font-size);
+	width: 100%;
 }
 
 .text-area-form {
