@@ -1,3 +1,4 @@
+
 window.addEventListener('load', start)
 
 function start() {
@@ -12,8 +13,9 @@ function start() {
   });
 
   // trayectoria
- document.querySelectorAll('[data-target]').forEach(tab => tab.addEventListener('click', trayectoriaActive))
+  document.querySelectorAll('[data-target]').forEach(tab => tab.addEventListener('click', trayectoriaActive))
 
+  // typing effect
   typeEffect()
 }
 
