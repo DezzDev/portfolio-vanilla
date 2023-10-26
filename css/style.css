@@ -18,7 +18,7 @@
 
 /* >>>>>>>>>>>>>>>>>  Colors <<<<<<<<<<<<<<<<<< */
 :root {
-	--header-height: 3rem;
+	--header-height: 4rem;
 
 	--hue-color: 240;
 	--body-color: hsl(240, 100%, 5%);
@@ -94,10 +94,10 @@
 
 @media screen and (min-width: 968px) {
 	:root {
-		--big-font-size: 4rem;
-		--h1-font-size: 3.25rem;
-		--h2-font-size: 2.5rem;
-		--h3-font-size: 2rem;
+		--big-font-size: 3.5rem;
+		--h1-font-size: 2.5rem;
+		--h2-font-size: 2rem;
+		--h3-font-size: 1.5rem;
 		--typing-effect-font-size: 2rem;
 		--normal-font-size: 1.1rem;
 		--small-font-size: .900rem;
@@ -194,8 +194,6 @@ nav.nav {
 	align-items: center;
 }
 
-
-
 nav .toggle-menu,
 nav .logo {
 	font-size: 1.2rem;
@@ -209,6 +207,10 @@ nav .logo:hover {
 	color: var(--fifth-color);
 }
 
+nav .icon-menu {
+	font-size: 1.5rem;
+}
+
 nav .menu {
 	position: fixed;
 	left: 0;
@@ -217,7 +219,7 @@ nav .menu {
 	padding: 1.8rem 1.5rem 4rem;
 	background-color: var(--first-color);
 	border-radius: 25px 25px 0 0;
-	box-shadow: 0 -1px 10px 0 rgba(0, 0, 172, 0.8);
+	box-shadow: 0 0 7px 0 rgba(168, 168, 243, 0.3);
 	transition: .5s;
 }
 
@@ -240,14 +242,14 @@ nav .menu .menu-content {
 	max-width: 400px;
 }
 
-nav .menu .menu-content .nav-item .nav-link {
+.nav-link {
 	color: var(--title-color);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-nav .menu .nav-close {
+.nav-close {
 	position: absolute;
 	font-size: 1.6rem;
 	bottom: 1rem;
@@ -256,9 +258,17 @@ nav .menu .nav-close {
 	color: var(--title-color);
 }
 
-nav .menu .menu-content .nav-item .nav-link:hover,
-nav .menu .nav-close:hover {
+.nav-link:hover,
+.nav-close:hover {
 	color: var(--fifth-color);
+}
+
+.active-link {
+	color: var(--fifth-color);
+}
+
+.scroll-header {
+	box-shadow: 0 0 4px rgba(255, 255, 255, 0.15);
 }
 
 /* >>>>>>>>>>>>>>>>>  Particles <<<<<<<<<<<<<<<<<< */
@@ -518,7 +528,7 @@ nav .menu .nav-close:hover {
 
 /* >>>>>>>>>>>>>>>>>  Contacto <<<<<<<<<<<<<<<<<< */
 
-.contacto {}
+
 
 .contacto-content {
 	display: grid;
@@ -637,6 +647,27 @@ nav .menu .nav-close:hover {
 	text-align: center;
 }
 
+/* Scroll top */
+.scroll-top{
+	position: fixed;
+	right: 1.5rem;
+	bottom: -3rem;
+	color: #fff;
+	padding: 8px;
+	background-color: var(--first-complement-color);
+	border-radius: 5px;
+	transition: bottom 1s;
+	opacity: 70%;
+}
+
+.scrollup-icon{
+	font-size: 1.5rem;
+}
+
+.show-scroll-top{
+	bottom: 4.5rem;
+}
+
 
 /* >>>>>>>>>>>>>>>>>  Media querys <<<<<<<<<<<<<<<<<< */
 
@@ -726,9 +757,6 @@ nav .menu .nav-close:hover {
 		display: none;
 	}
 
-
-
-
 	/* Contacto */
 	.contacto-content {
 		grid-template-columns: 1fr 1fr;
@@ -747,4 +775,26 @@ nav .menu .nav-close:hover {
 	}
 }
 
-@media screen and (min-width: 968px) {}
+@media screen and (min-width: 968px) {
+	.home {
+		grid-template-columns: 1fr 1fr;
+		column-gap: 2rem;
+	}
+
+
+
+	.home-content {
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+
+	}
+
+	.home-content>h3 {
+		margin: initial;
+	}
+
+	.typing-effect {
+		grid-column: 1/3;
+	}
+}

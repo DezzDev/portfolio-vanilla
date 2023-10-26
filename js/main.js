@@ -17,6 +17,15 @@ function start() {
 
   // typing effect
   typeEffect()
+
+  // scroll section active link
+  window.addEventListener('scroll',scrollActive)
+
+  // scroll header
+  window.addEventListener('scroll',scrollHeader)
+
+  // scrollTop
+  window.addEventListener('scroll',scrollTop)
 }
 
 
@@ -85,4 +94,64 @@ function trayectoriaActive(e){
 
   //añadimos la clase active al tab seleccionado
   e.target.classList.add('active')
+}
+
+// Scroll section and active link
+const sections = document.querySelectorAll('section[id]')
+
+function scrollActive(){
+  // constante con la cual tenemos el valor del scroll en todo momento
+  const scrollY = window.scrollY
+
+  sections.forEach((section) => {
+    //obtenemos el height de cada section
+    const sectionHeight = section.offsetHeight
+
+    //obtenemos la distancia a la que se encuentra cada section del top de la ventana
+    const sectionTop = section.offsetTop - 60
+    
+    // obtenemos el id de la section
+    const sectionId = section.getAttribute('id')
+    // console.log(section.id, sectionHeight, sectionTop)
+
+    // si el valor del scrollY es mayor que sectionTop, 
+    // osea que estamos a la altura o hemos pasado la altura de la section 
+    // y 
+    // scrollY menor igual que la suma de sectionTop más sectionHeight
+    // osea que estemos dentro de la section y que no nos salgamos de ella
+    if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+      document
+        .querySelector(`.menu-content a[href*=${sectionId}]`)
+        .classList.add('active-link')
+    }else{
+      document
+        .querySelector(`.menu-content a[href*=${sectionId}]`)
+        .classList.remove('active-link')
+    }
+  })
+
+}
+
+function scrollHeader (){
+  const header = document.getElementsByTagName('header')
+  
+  // el this en este caso hace referencia a window ya que es el 
+  // elemento al que hemos aplicado el evento
+
+  //si el valor del scroll es superior a 100
+  if(this.scrollY > 100){
+    header[0].classList.add('scroll-header')
+  }else{
+    header[0].classList.remove('scroll-header')
+  }
+}
+
+function scrollTop () {
+  const scrollTop = document.getElementById('scroll-top')
+
+  if(this.scrollY > (this.innerHeight / 2)){
+    scrollTop.classList.add('show-scroll-top')
+  }else{
+    scrollTop.classList.remove('show-scroll-top')
+  }
 }
