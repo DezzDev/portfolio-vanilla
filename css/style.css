@@ -412,19 +412,41 @@ nav .menu .menu-content {
 
 .card-back {
 	transform: rotateY(.5turn);
-	background-color: var(--first-complement-color);
+	background-color: var(--first-color);
 	color: #fff;
 	padding: .5rem;
 }
 
+.card-back>.card-body {
+	color: var(--first-complement-color);
+	font-weight: var(--font-bold);
+	font-size: 1.3rem;
+	display: flex;
+	flex-flow: column wrap;
+	gap: .5rem;
+}
+
+.card-back>.card-body>a {
+	color: #fff;
+	font-weight: 100;
+	font-size: 1rem;
+}
+
+.card-back>.card-body>a:hover {
+	color: var(--fifth-color);
+}
+
 .card-front {
 	background-color: rgb(49, 40, 40);
-	background-image: url(../img/trastero.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-blend-mode: overlay;
 	color: #fff;
+}
+
+.proyect-chat {
+	background-image: url(../img/jason-leung-mZNRsYE9Qi4-unsplash.jpg);
 }
 
 .card-front::before {
@@ -648,7 +670,7 @@ nav .menu .menu-content {
 }
 
 /* Scroll top */
-.scroll-top{
+.scroll-top {
 	position: fixed;
 	right: 1.5rem;
 	bottom: -3rem;
@@ -660,11 +682,11 @@ nav .menu .menu-content {
 	opacity: 70%;
 }
 
-.scrollup-icon{
+.scrollup-icon {
 	font-size: 1.5rem;
 }
 
-.show-scroll-top{
+.show-scroll-top {
 	bottom: 4.5rem;
 }
 
