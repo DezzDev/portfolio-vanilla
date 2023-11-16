@@ -26,6 +26,9 @@ function start() {
 
   // scrollTop
   window.addEventListener('scroll',scrollTop)
+
+	//form validation
+	window.addEventListener('submit', formValidation)
 }
 
 
@@ -132,6 +135,7 @@ function scrollActive(){
 
 }
 
+// Scroll Header, apply box shadow to header
 function scrollHeader (){
   const header = document.getElementsByTagName('header')
   
@@ -146,6 +150,7 @@ function scrollHeader (){
   }
 }
 
+// show arrow to navigate to top page
 function scrollTop () {
   const scrollTop = document.getElementById('scroll-top')
 
@@ -154,4 +159,38 @@ function scrollTop () {
   }else{
     scrollTop.classList.remove('show-scroll-top')
   }
+}
+
+
+// form validation
+function formValidation(e){
+	// get form by id
+	const form = document.getElementById("formContact")
+
+	// create FormData object
+	const formData = new FormData(form)
+
+	// check inputs not empty
+	for ( let pair of formData.entries()){
+		if(pair[1] == 0){
+			alert("Debes rellenar todos los campos")
+			e.preventDefault()
+			return
+		}
+	}
+
+	// format email
+	// create email body
+	let emailBody = "Nombre: " + formData.get("name") + 
+									"\nEmail: " + formData.get("email") +
+									"\nMensaje: " + formData.get("message") 
+
+	// Encode the body of the email to include line breaks
+	emailBody = encodeURIComponent(emailBody)
+
+	// add parameters to the mailto link
+	const emailLink = "mailto:thedezz360@gmail.com?subject=Petición de contacto&body=" + emailBody
+
+	// open email client with custom link
+	window.location.href = emailLink
 }
