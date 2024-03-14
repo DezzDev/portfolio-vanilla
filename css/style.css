@@ -175,6 +175,28 @@ img {
 	text-align: right;
 }
 
+.btn {
+	display: flex;
+
+	align-items: center;
+	padding: .5rem 1rem;
+	font-size: 1rem;
+	border-radius: 10px;
+	cursor: pointer;
+	background-color: var(--first-complement-color);
+	border: none;
+	color: white;
+}
+
+.btn:hover {
+	background-color: var(--second-complement-color);
+}
+
+.btn .button-icon {
+	font-size: 1.3rem;
+	margin-left: 5px;
+}
+
 /* >>>>>>>>>>>>>>>>>  Menu <<<<<<<<<<<<<<<<<< */
 
 header {
@@ -284,43 +306,46 @@ nav .menu .menu-content {
 
 .home {
 	height: calc(100vh - var(--header-height));
-	min-height: 400px;
+	min-height: 500px;
 	display: grid;
 	justify-items: center;
 	grid-template-rows: auto max-content auto;
 	gap: 1rem;
 }
 
-.home .perfil {
+.perfil {
 	display: flex;
 	gap: 1rem;
 	align-items: center;
 }
 
-.home .perfil .redes {
+.redes {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
 }
 
-.home .perfil .redes svg {
-	font-size: 1.5rem;
-	width: 30px;
+.redes i {
+	font-size: 2rem;
 	color: var(--fifth-color);
 	cursor: pointer;
-	transition: scale ease-out .5s;
 }
 
-.home .perfil .redes svg:hover{
+.redes .icon-social::before{
+	transition: .5s;
+}
+
+.redes .icon-social:hover::before{
 	scale: 1.5;
 	opacity: .8;
+	
 }
 
 .home .perfil .perfil-img {
 	background: linear-gradient(90deg, var(--third-color) 0%, var(--fourth-color) 100%);
 	border-radius: 63% 37% 54% 46% / 43% 40% 60% 57%;
 	overflow: hidden;
-	max-width: 200px;
+	max-width: 300px;
 }
 
 .foto-perfil {
@@ -373,23 +398,16 @@ nav .menu .menu-content {
 
 /* >>>>>>>>>>>>>>>>>  Proyectos <<<<<<<<<<<<<<<<<< */
 
-/* ul {
-  list-style: none;
-  margin: 1rem;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-} */
-
-/* .product-container{
-  position: relative;
-  
-} */
+.cards-container{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(204px, 1fr));
+	justify-items: center;
+	gap: 1rem;
+}
 .card {
   position: relative;
-  width: 340px;
-  height: 460px;
+  width: 204px;
+  height: 276px;
   background: #232323;
   border-radius: 20px;
   overflow: hidden;
@@ -402,11 +420,11 @@ nav .menu .menu-content {
   width: 100%;
   height: 100%;
   background: var(--product-color);
-  clip-path: circle(150px at 80% 20%);
+  clip-path: circle(90px at 80% 20%);
   transition: .5s ease-in-out;
 }
 .card:hover:before {
-  clip-path: circle(300px at 80% -20%);
+  clip-path: circle(180px at 80% -20%);
 }
 .title {
   position: relative;
@@ -415,50 +433,45 @@ nav .menu .menu-content {
   margin-top: 12px;
 }
 .bg-title {
-  font-size: 10em;
+  font-size: 4em;
   font-weight: 900;
   font-style: italic;
   color: rgba(255,255,255,.04);
-  position: absolute;
   max-width: 120%;
-  top: -150%;
-  transition: .6s;
+	position: absolute;
+  transition: 0.8s ease-in-out;
+	transform: translateY(-130%);
+	
 }
 .card:hover .bg-title {
-  transform: translateY(60%);
+  transform: translateY(-150%);
+	
 }
 .photo {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   z-index: 10;
   width: 100%;
-  height: 220px;
   transition: .5s;
-  
+	position: relative;
 }
 .card:hover .photo {
-  top: 0%;
-  transform: translateY(0%);
+	transform: translateY(-20%);
 }
 .photo img {
-  position: absolute;
-  width: 220px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: .5s;
-  
+  width: 120px;
+  transform: translate(40%, 40%);
+  transition: all .7s;
+	
 }
 .card:hover .photo img {
-  width: 260px;
-  top: 56%;
+  transform: translate(75%, 25%);
+	width: 100px;
+	transition-delay: 0s;
 }
 .content {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 100px;
+  height: 120px;
   text-align: center;
   transition: 1s;
   z-index: 5;
@@ -470,21 +483,21 @@ nav .menu .menu-content {
 .card-description{
 	padding: .5rem;
 	transition: .5s;
-	visibility: hidden;
 	opacity: 0;
 	font-size: var(--small-font-size);
 }
 
 .card:hover .card-description{
-	visibility: visible;
 	opacity: 1;
-	transition-delay: .5s;
+	transition-delay: .3s;
 }
 
 .card-buttons{
 	display: flex;
 	justify-content: center;
 	gap: 2rem;
+	opacity: 0;
+	transition: .5s;
 }
 
 .card-btn {
@@ -492,27 +505,22 @@ nav .menu .menu-content {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-  padding: 5px 10px;
+  padding: 3px 6px;
   background: #fff;
   border: none;
   border-radius: 4px;
   margin-top: 10px;
   font-weight: 600;
   color: #111;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: 0.5s;
   cursor: pointer;
   outline:none;
 	font-size: var(--smaller-font-size);
+	
 
 }
-.card:hover .card-btn {
+.card:hover .card-buttons {
   opacity: 1;
-  transform: translateY(0px);
-  transition: 0.5s;
- 
-  
+	transition-delay: .3s;
 }
 .card:hover .card-btn:hover {
   background: var(--product-color);
@@ -666,27 +674,7 @@ nav .menu .menu-content {
 	resize: vertical;
 }
 
-.btn-form {
-	display: flex;
 
-	align-items: center;
-	padding: .5rem 1rem;
-	font-size: 1rem;
-	border-radius: 10px;
-	cursor: pointer;
-	background-color: var(--first-complement-color);
-	border: none;
-	color: white;
-}
-
-.btn-form:hover {
-	background-color: var(--second-complement-color);
-}
-
-.btn-form .button-icon {
-	font-size: 1.3rem;
-	margin-left: 5px;
-}
 
 /* >>>>>>>>>>>>>>>>>  Footer <<<<<<<<<<<<<<<<<< */
 
@@ -766,9 +754,6 @@ nav .menu .menu-content {
 		--card-subtitle: .8rem
 	}
 
-	.proyectos-section .cards-container {
-		grid-template-columns: auto auto;
-	}
 
 	.footer-content {
 		grid-template-columns: repeat(2, 1fr);
@@ -780,7 +765,7 @@ nav .menu .menu-content {
 @media screen and (min-width: 768px) {
 
 	.section {
-		padding: 6rem 0 2rem;
+		padding: 4rem 0 2rem;
 	}
 
 	.container {
