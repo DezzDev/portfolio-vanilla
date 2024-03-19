@@ -478,6 +478,9 @@ nav .menu .menu-content {
 }
 .card:hover .content {
   height: 190px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .card-description{
@@ -533,8 +536,8 @@ nav .menu .menu-content {
 .project-1 {
   --product-color: #FEB500;
 }
-.product-2 {
-  --product-color: #EFB2AF;
+.project-2 {
+  --product-color: #a80d94;
 }
 .product-3 {
   --product-color: #424242;
@@ -640,7 +643,6 @@ nav .menu .menu-content {
 
 .form-contacto {
 	display: grid;
-
 	gap: 1rem;
 	justify-content: center;
 }

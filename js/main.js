@@ -42,7 +42,7 @@ function toogleMenu() {
 // >>>>>>>>>>>>>> typing effect <<<<<<<<<<<<<<<<<
 
 const dynamicText = document.querySelector('.typing-effect span')
-const words = ['Pasión', 'Arte', 'Futuro', 'Todo']
+const words = ['Pasión', 'Arte', 'Futuro', 'Divertido']
 let wordIndex = 0
 let charIndex = 0
 let isDeleting = false
