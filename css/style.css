@@ -475,6 +475,7 @@ nav .menu .menu-content {
   text-align: center;
   transition: 1s;
   z-index: 5;
+	padding: 0 5px 0 5px;
 }
 .card:hover .content {
   height: 190px;
