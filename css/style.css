@@ -452,18 +452,19 @@ nav .menu .menu-content {
   width: 100%;
   transition: .5s;
 	position: relative;
+	
 }
 .card:hover .photo {
 	transform: translateY(-20%);
 }
 .photo img {
   width: 120px;
-  transform: translate(40%, 40%);
+  transform: translate(40%, var(--position-vertical));
   transition: all .7s;
 	
 }
 .card:hover .photo img {
-  transform: translate(75%, 25%);
+  transform: translate(75%, var(--position-vertical-hover));
 	width: 100px;
 	transition-delay: 0s;
 }
@@ -536,12 +537,19 @@ nav .menu .menu-content {
 
 .project-1 {
   --product-color: #FEB500;
+	--position-vertical: 40%;
+	--position-vertical-hover: 25%;
 }
 .project-2 {
   --product-color: #a80d94;
+	--position-vertical: 40%;
+	--position-vertical-hover: 25%;
 }
-.product-3 {
-  --product-color: #424242;
+.project-3 {
+  --product-color: #1644c4;
+	--position-vertical: 90%;
+	--position-vertical-hover: 45%;
+
 }
 .product-4 {
   --product-color: #3E3A4C;
