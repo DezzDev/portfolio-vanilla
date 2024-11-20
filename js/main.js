@@ -28,7 +28,8 @@ function start() {
   window.addEventListener('scroll',scrollTop)
 
 	//form validation
-	window.addEventListener('submit', formValidation)
+	const btnEnviar = document.getElementById("enviar")
+	btnEnviar.addEventListener('click', formValidation)
 }
 
 
@@ -164,6 +165,7 @@ function scrollTop () {
 
 // form validation
 function formValidation(e){
+	e.preventDefault()
 	// get form by id
 	const form = document.getElementById("formContact")
 
@@ -174,22 +176,21 @@ function formValidation(e){
 	for ( let pair of formData.entries()){
 		if(pair[1] == 0){
 			alert("Debes rellenar todos los campos")
-			e.preventDefault()
+			
 			return
 		}
 	}
 
 	// format email
 	// create email body
-	let emailBody = "Nombre: " + formData.get("name") + 
+	const subject = "Contacto desde portfolio"
+	const emailBody = "Nombre: " + formData.get("name") + 
 									"\nEmail: " + formData.get("email") +
 									"\nMensaje: " + formData.get("message") 
 
-	// Encode the body of the email to include line breaks
-	emailBody = encodeURIComponent(emailBody)
 
 	// add parameters to the mailto link
-	const emailLink = "mailto:thedezz360@gmail.com?subject=Petición de contacto&body=" + emailBody
+	const emailLink = `mailto:thedezz360@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}` 
 
 	// open email client with custom link
 	window.location.href = emailLink
