@@ -186,7 +186,7 @@ function formValidation(e){
 	const subject = "Contacto desde portfolio"
 	const emailBody = "Nombre: " + formData.get("name") + 
 									"\nEmail: " + formData.get("email") +
-									"\nMensaje: " + formData.get("message") 
+									"\n" + formData.get("message") 
 
 
 	// add parameters to the mailto link
